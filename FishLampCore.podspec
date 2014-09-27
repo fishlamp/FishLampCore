@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.ios.frameworks = 'Security', 'MobileCoreServices', 'SystemConfiguration', 'Foundation'
     s.osx.frameworks = 'CoreServices', 'Security', 'SystemConfiguration', 'ApplicationServices', 'CoreFoundation',  'Foundation'
-	s.source_files = = 'Classes/**/*.{h,m}'
+	s.source_files = 'Classes/**/*.{h,m}'
 
 # 	s.subspec 'Core' do |ss|
 # 	
