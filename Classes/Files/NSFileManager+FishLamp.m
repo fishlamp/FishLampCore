@@ -78,7 +78,7 @@
 
 + (NSString*) timeStampedName:(NSString*) baseName optionalExtension:(NSString*) extension {
 	NSDateComponents* parts = [[NSCalendar currentCalendar] components: 
-			(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit |NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit)
+			( NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond )
 			fromDate:[NSDate date]];
 	return [NSString stringWithFormat:@"%@ (%.2ld.%.2ld.%.2ld-%.2ld.%.2ld.%.2ld)%@", baseName, 
 				(long)parts.month,

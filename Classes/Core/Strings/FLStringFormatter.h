@@ -110,7 +110,7 @@ typedef void (^FLStringFormatterIndentedBlock)();
  *  The delegate implements the guts of the string formatter. By default the delegate is set to self because most of the time we will be subclass FLStringFormatter.
  *  @interface MyStringFormatter : FLStringFormatter<FLStringFormatterDelegate>
  */
-@property (readwrite, assign, nonatomic) id stringFormatterDelegate;
+@property (readwrite, weak, nonatomic) id stringFormatterDelegate;
 
 @property (readwrite, strong, nonatomic) id<FLStringPreprocessor> preprocessor;
 

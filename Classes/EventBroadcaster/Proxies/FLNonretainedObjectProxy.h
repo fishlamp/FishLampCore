@@ -14,7 +14,7 @@
 @private
     FL_WEAK id _containedObject;
 }
-@property (readonly, assign) id containedObject;
+@property (readonly, weak) id containedObject;
 
 + (id) nonretainedObjectProxy:(id) object;
 @end

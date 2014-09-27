@@ -88,7 +88,7 @@ BOOL FLCallbackPerform3(FLCallback_t callback, id withObject1, id withObject2, i
     SEL _action;
 }
 
-@property (readwrite, assign) id target;
+@property (readwrite, weak) id target;
 @property (readwrite, assign) SEL action;
 
 @end

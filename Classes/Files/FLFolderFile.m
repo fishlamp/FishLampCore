@@ -8,7 +8,6 @@
 //
 
 #import "FLFolderFile.h"
-#import "FLObjectDescriber.h"
 
 @implementation FLFolderFile
 

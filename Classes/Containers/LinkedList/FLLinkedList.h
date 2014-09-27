@@ -54,7 +54,8 @@
 /// Create a new linked list.
 + (FLLinkedList*) linkedList;
 
-- (NSEnumerator*) mutableEnumerator; // you can change the list while enumerating, but the enumeration is a bit slower
+// you can change the list while enumerating, but the enumeration is a bit slower
+@property (readonly, weak, nonatomic) NSEnumerator* mutableEnumerator;
 
 /// Get the number of elements in the list.
 /// @returns The count.
