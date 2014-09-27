@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
    
     s.name         = "FishLampCore"
-    s.version      = "4.0.0"
+    s.version      = "4.0.1"
     s.summary      = "This is the pod for FishLamp"
     s.homepage     = "http://fishlamp.com"
     s.license      = 'MIT'
