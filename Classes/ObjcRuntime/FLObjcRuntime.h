@@ -12,6 +12,9 @@
 
 #import "FLRuntimeInfo.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
 
 // swizzling
 
@@ -66,6 +69,11 @@ extern void FLRuntimeGetSelectorsInProtocol(Protocol* protocol, SEL** list, unsi
 #if DEBUG
 void FLRuntimeLogMethodsForClass(Class aClass);
 #endif
+
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */
 
 
 #if EXPERIMENTAL

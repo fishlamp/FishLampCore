@@ -10,6 +10,10 @@
 #import "FishLampRequired.h"
 #import "FLVersion.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 extern FLVersion FLGetOSVersion(void);
 
 #if IOS
@@ -26,3 +30,7 @@ extern FLVersion FLGetOSVersion(void);
 
     #define OSXVersionIs10_6() FLVersionLessThanVersion(FLGetOSVersion(), FLVersionMake(10,7,0,0))
 #endif
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

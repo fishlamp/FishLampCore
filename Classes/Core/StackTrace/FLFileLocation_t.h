@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 typedef struct {
     const char* filePath; // absolute path to file
     const char* fileName; // just the file name (Call FLFileLocationSetFileName first)
@@ -42,3 +46,7 @@ extern const char* FLFileLocationGetFileName(FLFileLocation_t* loc);
 
 #define FLCurrentFileLocation() \
             FLFileLocationMake(__FILE__, __PRETTY_FUNCTION__, __LINE__)
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

@@ -23,5 +23,3 @@ void FLSetWillThrowExceptionHandler(FLWillThrowExceptionHandlerFunction handler)
 FLWillThrowExceptionHandlerFunction* FLGetWillThrowExceptionHandler() {
     return s_will_throw_exception_handler == nil ? FLDefaultWillThrowExceptionHandler : s_will_throw_exception_handler;
 }
-
-

@@ -14,7 +14,7 @@ typedef void (^FLStringPreprocessorOutputBlock)(NSRange range);
 
 @implementation FLStringFormatterLineProprocessor
 
-FLSynthesizeSingleton(FLStringFormatterLineProprocessor);
+FLSynthesizeSingleton();
 
 - (NSRange) processString:(NSString*) string
       foundLineRangeBlock:(FLStringPreprocessorResultBlock) foundLineRangeBlock {

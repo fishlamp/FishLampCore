@@ -9,12 +9,16 @@
 
 #import "FishLampRequired.h"
 
-/// FLSingletonProperty is a macro for defining a singleton object.
+/// FLDeclareSingleton is a macro for defining a singleton object.
 /// @param __class The type of the class (for example MyClass). 
-#define FLSingletonProperty(__class) + (__class*)instance; \
-                                     + (void) createInstance; \
-                                     + (void) releaseInstance; \
-                                     + (BOOL) hasInstance
+
+#if DEPRECATED
+
+#define FLDeclareSingleton() \
+            + (instancetype)instance; \
+            + (void) createInstance; \
+            + (void) releaseInstance; \
+            + (BOOL) hasInstance
 
 /// Synthesizes all the boilerplate for declaring a thread safe fast singleton
 #define FLSynthesizeSingleton(__class) \
@@ -35,3 +39,21 @@
         return s_instance##__class != nil; \
     }
 
+#else
+            
+#define FLSynthesizeNamedSingleton(NAME) \
+    + (instancetype) NAME { \
+        static dispatch_once_t once; \
+        static id s_instance = nil; \
+        dispatch_once(&once, ^{ \
+            s_instance = [[[self class] alloc] init]; \
+        }); \
+        \
+        return s_instance; \
+        } \
+
+
+#define FLSynthesizeSingleton() \
+            FLSynthesizeNamedSingleton(instance)
+
+#endif

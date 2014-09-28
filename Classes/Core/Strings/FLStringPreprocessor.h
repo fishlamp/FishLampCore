@@ -17,7 +17,7 @@ typedef void (^FLStringPreprocessorResultBlock)(NSRange range);
 @end
 
 @interface FLStringFormatterLineProprocessor : NSObject<FLStringPreprocessor>
-FLSingletonProperty(FLStringFormatterLineProprocessor);
++ (instancetype) instance;
 @end
 
 

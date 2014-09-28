@@ -13,7 +13,7 @@
 
 @implementation FLPrintfStringFormatter
 
-FLSynthesizeSingleton(FLPrintfStringFormatter);
+FLSynthesizeSingleton();
 
 @synthesize rememberHistory = _rememberHistory;
 

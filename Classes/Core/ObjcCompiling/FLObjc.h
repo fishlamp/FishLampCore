@@ -6,6 +6,10 @@
 #undef FL_DISPATCH_MRC
 #undef FL_DISPATCH_ARC
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 #if __has_feature(objc_arc)
     #define FL_ARC 1
     #define FL_DISPATCH_ARC 1
@@ -136,3 +140,6 @@ extern id FLCopyOrRetainObjectWithAutorelease(id src);
 #define FL_WEAK __weak
 
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

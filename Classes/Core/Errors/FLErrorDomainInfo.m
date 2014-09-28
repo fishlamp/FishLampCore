@@ -15,7 +15,7 @@
 
 @implementation FLErrorDomainInfo
 
-FLSynthesizeSingleton(FLErrorDomainInfo);
+FLSynthesizeSingleton();
 
 - (id) init {	
 	self = [super init];

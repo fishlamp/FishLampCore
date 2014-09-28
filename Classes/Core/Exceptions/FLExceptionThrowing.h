@@ -17,6 +17,11 @@
 #define INCLUDE_STACK_TRACE YES
 #endif
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
+
 typedef NSException* FLWillThrowExceptionHandlerFunction(NSException *exception);
 
 //extern void FLSetWillThrowExceptionHandler(FLWillThrowExceptionHandlerFunction* handler);
@@ -69,3 +74,6 @@ NSException* FLDefaultWillThrowExceptionHandler(NSException *exception);
                             userInfo:nil \
                             stackTrace:FLCreateStackTrace(INCLUDE_STACK_TRACE)])
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

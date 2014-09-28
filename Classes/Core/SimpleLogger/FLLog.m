@@ -25,7 +25,7 @@ NSException* FLWillThrowExceptionHandlerForLogger(NSException *exception) {
 
 @implementation FLLogLogger 
 
-FLSynthesizeSingleton(FLLogLogger);
+FLSynthesizeSingleton();
 
 + (void) initialize {
 

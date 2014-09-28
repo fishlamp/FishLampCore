@@ -21,7 +21,7 @@
     NSMutableDictionary* _domains;
 }
 
-FLSingletonProperty(FLErrorDomainInfo);
++ (instancetype) instance;
 
 - (FLErrorDomainInfo*) infoForErrorDomain:(NSString*) errorDomain;
 - (void) setInfo:(FLErrorDomainInfo*) info forDomain:(NSString*) domain;

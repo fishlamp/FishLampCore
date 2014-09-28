@@ -9,6 +9,10 @@
 #import "FishLampRequired.h"
 #import "FLFileLocation_t.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 typedef struct {
     const char** lines;
     int depth;
@@ -20,11 +24,11 @@ typedef struct {
 } FLStackTrace_t;
 
 
-extern void FLStackTraceInit(FLStackTrace_t* stackTrace, void* callstack);
+void FLStackTraceInit(FLStackTrace_t* stackTrace, void* callstack);
 
-extern void FLStackTraceFree(FLStackTrace_t* trace);
+void FLStackTraceFree(FLStackTrace_t* trace);
 
-extern FLStackTrace_t FLStackTraceMake( FLFileLocation_t loc, BOOL withCallStack);
+FLStackTrace_t FLStackTraceMake( FLFileLocation_t loc, BOOL withCallStack);
 
 NS_INLINE
 const char* FLStackEntryAtIndex(FLCallStack_t stack, NSUInteger index) {
@@ -33,3 +37,7 @@ const char* FLStackEntryAtIndex(FLCallStack_t stack, NSUInteger index) {
 
 #define FLStackTraceToHere(__WITH_STACK_TRACE__) \
             FLStackTraceMake(FLCurrentFileLocation(), __WITH_STACK_TRACE__)
+
+#if defined(__cplusplus)
+}
+#endif

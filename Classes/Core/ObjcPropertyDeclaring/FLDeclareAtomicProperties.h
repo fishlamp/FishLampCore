@@ -10,6 +10,10 @@
 #import "FishLampRequired.h"
 #import "FLAtomic.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 #define FLSythesizeAtomicInt32Getter(__GETTER__, __PROPERTY_TYPE__, __MEMBER_NAME__) \
     - (__PROPERTY_TYPE__) __GETTER__ { \
         return (__PROPERTY_TYPE__) FLAtomicGetInt32((int32_t*) &(__MEMBER_NAME__)); \
@@ -59,3 +63,7 @@ extern void FLAtomicCreateIfNilWithBlock(id __strong* addr, FLAtomicCreateBlock 
 
 #define FLSynthesizeLazyGetterDeprecated(__PROPERTY_NAME__, __PROPERTY_TYPE__, __IVAR_NAME__) \
             FLSynthesizeLazyGetter(__PROPERTY_NAME__, __PROPERTY_TYPE__*, __IVAR_NAME__, __PROPERTY_TYPE__)
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

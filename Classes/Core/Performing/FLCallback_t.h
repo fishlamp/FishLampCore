@@ -10,6 +10,10 @@
 #import "FishLampRequired.h"
 #import "FLSelectorPerforming.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 //
 // simple callback struct
 //
@@ -94,3 +98,6 @@ BOOL FLCallbackPerform3(FLCallback_t callback, id withObject1, id withObject2, i
 @end
 
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

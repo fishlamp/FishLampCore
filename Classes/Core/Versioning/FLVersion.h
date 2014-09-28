@@ -8,6 +8,10 @@
 //
 #import "FishLampRequired.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 typedef struct {
 	int major;
 	int minor;
@@ -58,3 +62,6 @@ BOOL FLVersionLessThanEqualToVersion(FLVersion lhs, FLVersion rhs)
 #define FLVersionGreaterThanEqualToVersion(lhs, rhs) FLVersionLessThanEqualToVersion(rhs, lhs)
 
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

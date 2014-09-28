@@ -10,6 +10,10 @@
 #import "FishLampRequired.h"
 #import "NSObject+FLSelectorPerforming.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 // the functions are here to accept target and selectors that are nil. also
 // if the target doesn't respond to the selector, the functions return NO 
 // and do nothing. 
@@ -46,3 +50,6 @@ typedef struct {
 extern const FLDispatcher_t FLDispatchOnMainThread;
 extern const FLDispatcher_t FLDispatchOnCurrentThread;
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

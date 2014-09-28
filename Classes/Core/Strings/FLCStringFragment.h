@@ -9,6 +9,10 @@
 
 #import "FishLampRequired.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 typedef struct {
     const char* string;
     size_t length;
@@ -18,7 +22,7 @@ extern FLCStringFragment FLParseFragmentFromCString(const char* string, char sto
 
 NS_INLINE 
 const char* FLCStringCopyWithLength(const char* str, size_t len) {
-    char* copy = malloc(len + 1);
+    char* copy = (char*) malloc(len + 1);
     memcpy(copy, str, len);
     copy[len] = 0;
     return copy;
@@ -33,6 +37,10 @@ NS_INLINE
 const char* FLCopyCStringInFragment(FLCStringFragment charString) {
     return FLCStringCopyWithLength(charString.string, charString.length);
 }
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */
 
 
 @interface NSString (FLCStringFragment)

@@ -16,6 +16,10 @@
 #define FLPropertyAttributesBufferSize 256
 #endif
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 typedef struct {
     char encodedAttributes[FLPropertyAttributesBufferSize];
     char propertyName[FLPropertyAttributesBufferSize];
@@ -68,3 +72,8 @@ extern SEL FLPropertyAttributesGetSelector(FLPropertyAttributes_t attributes);
 extern void FLPropertyAttributesGetAttributesForProtocol(Protocol* protocol, FLPropertyAttributes_t** buffer, unsigned int* outSize);
 
 extern void FLPropertyAttributesGetAttributesForClass(Class aClass, FLPropertyAttributes_t** buffer, unsigned int* outSize);
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */
+

@@ -7,7 +7,14 @@
 //
 
 #import "FishLampRequired.h"
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
 
 typedef void (^FLCriticalSectionBlock)();
 
 extern void FLCriticalSection(void* shared_addr, FLCriticalSectionBlock block);
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

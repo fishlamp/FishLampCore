@@ -8,20 +8,24 @@
 
 #import "NSString+FishLamp.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 // this also accepts a nil formatString (which is why it exists)
 extern NSString* FLStringWithFormatOrNil(NSString* formatOrNil, ...) NS_FORMAT_FUNCTION(1,2);
 
 // these work with nil strings, which is why they're not
 // category additions.
-BOOL FLStringIsEmpty(NSString* string);
-BOOL FLStringIsNotEmpty(NSString* string);
-BOOL FLStringsAreEqual(NSString* lhs, NSString* rhs);
-BOOL FLStringsAreEqualCaseInsensitive(NSString* lhs, NSString* rhs);
-
 extern BOOL FLStringIsEmpty(NSString* string);
 extern BOOL FLStringIsNotEmpty(NSString* string);
 extern BOOL FLStringsAreEqual(NSString* lhs, NSString* rhs);
 extern BOOL FLStringsAreEqualCaseInsensitive(NSString* lhs, NSString* rhs);
+
+//extern BOOL FLStringIsEmpty(NSString* string);
+//extern BOOL FLStringIsNotEmpty(NSString* string);
+//extern BOOL FLStringsAreEqual(NSString* lhs, NSString* rhs);
+//extern BOOL FLStringsAreEqualCaseInsensitive(NSString* lhs, NSString* rhs);
 
 #define FLStringsAreNotEqual(lhs, rhs) (!FLStringsAreEqual(lhs, rhs))
 
@@ -36,3 +40,7 @@ void FLAppendString(NSMutableString* string, NSString* aString) {
         [string appendString:aString];
     }
 }
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

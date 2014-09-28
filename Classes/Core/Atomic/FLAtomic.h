@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <libkern/OSAtomic.h>
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 extern void FLAtomicSet64Ptr(int64_t *target, int64_t new_value);
 extern int64_t FLAtomicGet64Ptr(int64_t *target);
 extern void FLAtomicSet32Ptr(int32_t *target, int32_t new_value);
@@ -76,3 +80,6 @@ extern int32_t FLAtomicGet32Ptr(int32_t *target);
             FLAtomicSetInteger((fl_atomic_integer_t*) &(__POINTER__), (fl_atomic_integer_t*) __NEW_POINTER__)
 
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

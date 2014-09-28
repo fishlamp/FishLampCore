@@ -7,6 +7,10 @@
 //  The FishLamp Framework is released under the MIT License: http://fishlamp.com/license 
 //
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 #import "FishLampRequired.h"
 #import "FishLampPropertyDeclaring.h"
 #import "FishLampAtomic.h"
@@ -25,3 +29,6 @@
 //#define FLLog   NSLog
 //#define FLTrace FLLog
 
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */

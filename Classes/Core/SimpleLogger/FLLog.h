@@ -11,7 +11,7 @@
 #import "FLLogger.h"
 
 @interface FLLogLogger : FLLogger
-FLSingletonProperty(FLLogLogger);
++ (instancetype) instance;
 @end
 
 #define FLLogTypeTrace      @"com.fishlamp.trace"

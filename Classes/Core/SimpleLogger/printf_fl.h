@@ -20,7 +20,7 @@
 
 @property (readwrite, assign, nonatomic) BOOL rememberHistory;
 
-FLSingletonProperty(FLPrintfStringFormatter);
++ (instancetype) instance;
 
 @end
 

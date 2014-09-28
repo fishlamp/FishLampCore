@@ -12,6 +12,10 @@
 
 #import "FLAtomic.h"
 
+#if defined(__cplusplus)
+    extern "C" {
+#endif /* defined(__cplusplus) */
+
 // WARNING: don't import anything here. This file is imported by FishLamp.  This is imported by everything.
 
 typedef uint32_t FLBitFlags_t;
@@ -156,3 +160,7 @@ uint32_t FLBitIndexFromMask(uint32_t value) {
 }
 
 #undef __return_if
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */
